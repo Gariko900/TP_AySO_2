@@ -1,0 +1,74 @@
+    1  pwd
+    2  lsblk
+    3  /dev/sdb
+    4  fdisk
+    5  fdisk --help
+    6  fdisk -l
+    7  sudo fdisk -l
+    8  sudo fdisk /dev/sdX
+    9  sudo pvcreate /dev/sdX1 /dev/sY1 /dev/sdZ1
+   10  sudo pvcreate /dev/sdX1 
+   11  sudo pvcreate
+   12  sudo apt install lvm2
+   13  sudo pvcreate /dev/sdX1 /dev/sY1 /dev/sdZ1
+   14  lsblk
+   15  # no tenia instalado el lvm2 y habia seleccionado mal los discos en la VM
+   16  sudo fdisk /dev/sdX
+   17  lsblk
+   18  sudo fdisk /dev/sdb
+   19  lsblk
+   20  sudo fdisk /dev/sdc
+   21  lsblk
+   22  sudo fdisk /dev/sdd
+   23  lsblk
+   24  sudo fdisk /dev/sdb
+   25  lsblk
+   26  sudo pvcreate /dev/sdb1 /dev/sc1 /dev/sdd1
+   27  sudo pvcreate /dev/sdc1
+   28  sudo vgcreate nodocentral /dev/sdb1 /dev/sdc1 /dev/sdd1
+   29  lsblk
+   30  sudo lvcreate -L3G -n sitios nodocentral
+   31  sudo lvcreate -L5G -n sitios nodocentral
+   32  sudo lvcreate -L5G -n salvas nodocentral
+   33  sudo lvextend -L 4G /dev/nodocentral/sitios
+   34  sudo resize2fs /dev/nodocentral/sitios
+   35  sudo mkfs.ext4 /dev/nodocentral/sitios
+   36  sudo resize2fs /dev/nodocentral/sitios
+   37  sudo lvdisplay /dev/nodocentral/sitios
+   38  sudo blkid  /dev/nodocentral/sitios
+   39  sudo mkfs.ext4 /dev/nodocentral/sitios
+   40  sudo mkfs.ext4 /dev/nodocentral/salvas
+   41  sudo mkdir /mnt/sitios
+   42  sudo mkdir /mnt/salvas
+   43  sudo mount /dev/nodocentralsitios /mnt/sitios
+   44  sudo mount /dev/nodocentral/sitios /mnt/sitios
+   45  sudo mount /dev/nodocentral/salvas /mnt/salvas
+   46  echo "Archivo de prueba" > /mnt/sitios/prueba.txt
+   47  sudo echo "Archivo de prueba" > /mnt/sitios/prueba.txt
+   48  echo "Archivo de prueba" 
+   49  sudo tee /mnt/sitios/pruebas.txt
+   50  echo "Archivo de prueba" > /mnt/sitios/prueba.txt
+   51  echo "Archivo de prueba" | sudo tee /mnt/sitios/prueba.txt
+   52  voy a usar el comando umount (observacion no esta en el pdf)
+   53  sudo umount /mnt/sitios
+   54  sudo umount /mnt/salvas
+   55  sudo lvremove /dev/nodocentral/sitios
+   56  sudo lvremove /dev/nodocentral/salvas
+   57  sudo vgremove nodocentral
+   58  sudo pvremove /dev/sdb1 /dev/sdc1/ /dev/sdd1
+   59  sudo pvremove /dev/sdc1/
+   60  lsblk
+   61  sudo fdisk /dev/sdd
+   62  lsblk
+   63  sudo fdisk /dev/sdd
+   64  lsblk
+   65  sudo fdisk /dev/sdd
+   66  lsblk
+   67  sudo mkdir /mnt/p1
+   68  sudo mkdir /mnt/p2
+   69  sudo mkdir /mnt/p3
+   70  sudo mkdir /mnt/p4
+   71  sudo mkdir /mnt/p5
+   72  sudo mkdir /mnt/p6
+   73  history
+   74  history > history.txt
